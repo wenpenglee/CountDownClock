@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CountDownClock (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "CountDownClock (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

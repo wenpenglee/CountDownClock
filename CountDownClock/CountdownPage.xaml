@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="CountDownClock.CountdownPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CountDownClock"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            Text="Countdown Timer"
+            FontSize="32"
+            FontWeight="Bold"
+            HorizontalAlignment="Center"
+            Margin="20"/>
+
+        <StackPanel
+            Grid.Row="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Spacing="40">
+
+            <TextBlock
+                x:Name="TimeDisplay"
+                Text="00:05:00"
+                FontSize="72"
+                FontWeight="Bold"
+                FontFamily="Consolas"
+                HorizontalAlignment="Center"
+                Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"/>
+
+            <StackPanel
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                Spacing="20">
+
+                <StackPanel Spacing="8">
+                    <TextBlock
+                        Text="Hours"
+                        HorizontalAlignment="Center"
+                        FontWeight="SemiBold"/>
+                    <NumberBox
+                        x:Name="HoursInput"
+                        Value="0"
+                        Minimum="0"
+                        Maximum="23"
+                        Width="100"
+                        SpinButtonPlacementMode="Inline"/>
+                </StackPanel>
+
+                <StackPanel Spacing="8">
+                    <TextBlock
+                        Text="Minutes"
+                        HorizontalAlignment="Center"
+                        FontWeight="SemiBold"/>
+                    <NumberBox
+                        x:Name="MinutesInput"
+                        Value="5"
+                        Minimum="0"
+                        Maximum="59"
+                        Width="100"
+                        SpinButtonPlacementMode="Inline"/>
+                </StackPanel>
+
+                <StackPanel Spacing="8">
+                    <TextBlock
+                        Text="Seconds"
+                        HorizontalAlignment="Center"
+                        FontWeight="SemiBold"/>
+                    <NumberBox
+                        x:Name="SecondsInput"
+                        Value="0"
+                        Minimum="0"
+                        Maximum="59"
+                        Width="100"
+                        SpinButtonPlacementMode="Inline"/>
+                </StackPanel>
+            </StackPanel>
+
+            <Button
+                x:Name="StartButton"
+                Content="Start"
+                FontSize="18"
+                FontWeight="SemiBold"
+                Padding="30,15"
+                HorizontalAlignment="Center"
+                Click="StartButton_Click"/>
+
+            <TextBlock
+                x:Name="StatusText"
+                Text="Click Start after setting timer"
+                FontSize="16"
+                HorizontalAlignment="Center"
+                Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+        </StackPanel>
+    </Grid>
+</Page>
